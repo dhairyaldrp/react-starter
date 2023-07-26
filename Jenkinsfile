@@ -31,11 +31,11 @@ pipeline {
             }
             steps {
                 // Copy build artifact to Windows Server using SCP (Assuming you have SSH access)
-                sh "scp -o StrictHostKeyChecking=yes -r build ${WINDOWS_USERNAME}@${WINDOWS_SERVER}:${REMOTE_PATH}"
+                sh "scp -o StrictHostKeyChecking=no -r build ${WINDOWS_USERNAME}@${WINDOWS_SERVER}:${REMOTE_PATH}"
 
                 // Restart IIS service on the Windows Server
                 // Note: This assumes you have appropriate permissions to restart the service
-                sh "ssh -o StrictHostKeyChecking=yes ${WINDOWS_USERNAME}@${WINDOWS_SERVER} 'iisreset'"
+                sh "ssh -o StrictHostKeyChecking=no ${WINDOWS_USERNAME}@${WINDOWS_SERVER} 'iisreset'"
             }
         }
     }
