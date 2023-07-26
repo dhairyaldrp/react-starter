@@ -24,10 +24,10 @@ pipeline {
         stage('Deploy') {
             environment {
                 // Customize these variables with your Windows Server details
-                WINDOWS_SERVER = 'your_windows_server_ip'
-                WINDOWS_USERNAME = 'your_windows_username'
-                WINDOWS_PASSWORD = 'your_windows_password'
-                REMOTE_PATH = 'C:/path/to/website/directory' // Change this path to your website directory on the Windows Server
+                WINDOWS_SERVER = '35.176.66.224'
+                WINDOWS_USERNAME = 'Administrator'
+                WINDOWS_PASSWORD = 'Gujarat1@'
+                REMOTE_PATH = 'C:/react' // Change this path to your website directory on the Windows Server
             }
             steps {
                 // Copy build artifact to Windows Server using SCP (Assuming you have SSH access)
