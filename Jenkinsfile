@@ -33,10 +33,12 @@ pipeline {
                 REMOTE_PATH = 'C:/react' // Change this path to your website directory on the Windows Server
             }
 
-            script {
-                def (serverIP, serverUsername, serverPassword) = SERVER_CONFIG.tokenize()
-                sh "sshpass -p '${serverPassword}' scp -o StrictHostKeyChecking=no -r build/* ${serverUsername}@${serverIP}:${remotePath}"
+            steps {
+                script {
+                    def (serverIP, serverUsername, serverPassword) = SERVER_CONFIG.tokenize()
+                    sh "sshpass -p '${serverPassword}' scp -o StrictHostKeyChecking=no -r build/* ${serverUsername}@${serverIP}:${remotePath}"
 
+                }
             }
             // steps {
             //     // Copy build artifact to Windows Server using SCP (Assuming you have SSH access)
