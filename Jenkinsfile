@@ -36,7 +36,7 @@ pipeline {
 
                 // Restart IIS service on the Windows Server
                 // Note: This assumes you have appropriate permissions to restart the service
-                sh "sshpass -p ${WINDOWS_PASSWORD} ssh -o StrictHostKeyChecking=no ${WINDOWS_USERNAME}@${WINDOWS_SERVER} 'powershell Restart-WebItem -Name \"react\"'"
+                //sh "sshpass -p ${WINDOWS_PASSWORD} ssh -o StrictHostKeyChecking=no ${WINDOWS_USERNAME}@${WINDOWS_SERVER} 'powershell Stop-Website -Name \"react\"; Start-Website -Name \"react\"'"
             }
         }
     }
