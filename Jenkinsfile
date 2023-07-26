@@ -30,12 +30,13 @@ pipeline {
                 REMOTE_PATH = 'C:/react' // Change this path to your website directory on the Windows Server
             }
             steps {
+                sh "pwd"
                 // Copy build artifact to Windows Server using SCP (Assuming you have SSH access)
-                sh "scp -o StrictHostKeyChecking=no -r build ${WINDOWS_USERNAME}@${WINDOWS_SERVER}:${REMOTE_PATH}"
+                sh "scp -i /home/ubuntu/.ssh/id_rsa -o StrictHostKeyChecking=no -r build ${WINDOWS_USERNAME}@${WINDOWS_SERVER}:${REMOTE_PATH}"
 
                 // Restart IIS service on the Windows Server
                 // Note: This assumes you have appropriate permissions to restart the service
-                sh "ssh -o StrictHostKeyChecking=no ${WINDOWS_USERNAME}@${WINDOWS_SERVER} 'iisreset'"
+                sh "ssh -i /home/ubuntu/.ssh/id_rsa  -o StrictHostKeyChecking=no ${WINDOWS_USERNAME}@${WINDOWS_SERVER} 'iisreset'"
             }
         }
     }
