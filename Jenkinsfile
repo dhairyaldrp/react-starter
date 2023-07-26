@@ -35,7 +35,7 @@ pipeline {
 
             steps {
                 script {
-                    def (serverIP, serverUsername, serverPassword) = SERVER_CONFIG.tokenize()
+                    def (serverIP, serverUsername, serverPassword, remotePath) = SERVER_CONFIG.tokenize()
                     sh "sshpass -p '${serverPassword}' scp -o StrictHostKeyChecking=no -r build/* ${serverUsername}@${serverIP}:${remotePath}"
 
                 }
