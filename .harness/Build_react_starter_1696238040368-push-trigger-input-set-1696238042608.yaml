@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_react_starter_1696238040368-push-trigger-input-set
+  identifier: Build_react_starter_1696238040368pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: Dhairya
+  pipeline:
+    identifier: Build_react_starter_1696238040368
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
