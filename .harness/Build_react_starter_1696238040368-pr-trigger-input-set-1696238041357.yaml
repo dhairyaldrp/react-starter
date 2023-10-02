@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_react_starter_1696238040368-pr-trigger-input-set
+  identifier: Build_react_starter_1696238040368prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: Dhairya
+  pipeline:
+    identifier: Build_react_starter_1696238040368
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
